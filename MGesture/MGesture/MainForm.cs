@@ -669,12 +669,15 @@ namespace MGesture
         {
             if (toolStripMenuItem1.Checked)
             {
-                var err = hook.InstallMouseHook();
-                if (err != 0)
-                    MessageBox.Show(this, "鼠标激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                err = hook.InstallKeyHook();
-                if (err != 0)
-                    MessageBox.Show(this, "键盘激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                new System.Threading.Thread(new System.Threading.ThreadStart(() =>
+                {
+                    var err = hook.InstallMouseHook();
+                    if (err != 0)
+                        MessageBox.Show(this, "鼠标激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    err = hook.InstallKeyHook();
+                    if (err != 0)
+                        MessageBox.Show(this, "键盘激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                })).Start();
 
                 notifyIcon1.Icon = MGesture.Properties.Resources._35;
             }

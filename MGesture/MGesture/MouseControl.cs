@@ -17,15 +17,15 @@ namespace MGesture
 
             if (f == MouseEventFlags.RightClick)
             {
-                Win32API.mouse_event((uint)MouseEventFlags.RightDown, (uint)X, (uint)Y, 0, 0);
+                Win32API.mouse_event((uint)MouseEventFlags.RightDown | (uint)MouseEventFlags.RightUp, (uint)X, (uint)Y, 0, 0);
                 //Thread.Sleep(10);
-                Win32API.mouse_event((uint)MouseEventFlags.RightUp, (uint)X, (uint)Y, 0, 0);
+                //Win32API.mouse_event((uint)MouseEventFlags.RightUp, (uint)X, (uint)Y, 0, 0);
             }
             else if (f == MouseEventFlags.LeftClick)
             {
-                Win32API.mouse_event((uint)MouseEventFlags.LeftDown, (uint)X, (uint)Y, 0, 0);
+                Win32API.mouse_event((uint)MouseEventFlags.LeftDown | (uint)MouseEventFlags.LeftUp, (uint)X, (uint)Y, 0, 0);
                 //Thread.Sleep(10);
-                Win32API.mouse_event((uint)MouseEventFlags.LeftUp, (uint)X, (uint)Y, 0, 0);
+                //Win32API.mouse_event((uint)MouseEventFlags.LeftUp, (uint)X, (uint)Y, 0, 0);
             }
             else if (f == MouseEventFlags.Move)
             {
