@@ -456,16 +456,16 @@ namespace MGesture
                 //右键抬起
                 //执行相应动作
 
-                //开始模拟按键，防止程序模拟的按键被截取
-                isSimulatedKey = true;
-                //isSimulatedMouse = true;
-
                 if (gestureReco.IsDrawLine)
                 {
                     DrawClear();
                     //SW_HIDE   0
                     Win32API.ShowWindow(Program.mainForm.Handle, 0);
                 }
+
+                //开始模拟按键，防止程序模拟的按键被截取
+                isSimulatedKey = true;
+                //isSimulatedMouse = true;
 
                 //execute the gesture
                 if (gestureReco.ExecuteGesture())
@@ -478,17 +478,15 @@ namespace MGesture
                 //    notifyIcon1.ShowBalloonTip(3500, "手势: " + gestureReco.Gesture + " 执行失败", "程序: " + gestureReco.ExeProgram, ToolTipIcon.Warning);
                 //}
 
-                if (gestureReco.Gesture.Length == 0)
-                {
-                    hook.IsStopMouseHook = true;
-                    //无动作帮点鼠标右键
-                    MouseControl.MouseEvent(MouseEventFlags.RightClick, x, y);
-                    hook.IsStopMouseHook = false;
-                }
-
                 //isSimulatedMouse = false;
                 //结束模拟按键
                 isSimulatedKey = false;
+
+                if (gestureReco.Gesture.Length == 0)
+                {
+                    //无动作帮点鼠标右键. 使用独立线程，否则右键菜单出现有卡顿
+                    System.Threading.ThreadPool.QueueUserWorkItem(rightClick);
+                }
             }
 
             if (button == System.Windows.Forms.MouseButtons.Middle)
@@ -511,6 +509,14 @@ namespace MGesture
                 }
             }
             //}
+        }
+
+        private void rightClick(object o)
+        {
+            hook.IsStopMouseHook = true;
+            MouseControl.MouseEvent(MouseEventFlags.RightClick, 0, 0);
+            System.Threading.Thread.Sleep(10);
+            hook.IsStopMouseHook = false;
         }
 
         /// <summary>
@@ -669,15 +675,12 @@ namespace MGesture
         {
             if (toolStripMenuItem1.Checked)
             {
-                new System.Threading.Thread(new System.Threading.ThreadStart(() =>
-                {
-                    var err = hook.InstallMouseHook();
-                    if (err != 0)
-                        MessageBox.Show(this, "鼠标激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    err = hook.InstallKeyHook();
-                    if (err != 0)
-                        MessageBox.Show(this, "键盘激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                })).Start();
+                var err = hook.InstallMouseHook();
+                if (err != 0)
+                    MessageBox.Show(this, "鼠标激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                err = hook.InstallKeyHook();
+                if (err != 0)
+                    MessageBox.Show(this, "键盘激活失败: " + err, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 notifyIcon1.Icon = MGesture.Properties.Resources._35;
             }

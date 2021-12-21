@@ -118,6 +118,8 @@ namespace MyHook
         /// </remarks>
         private HookProc m_MouseHookProcedure;
 
+        private IntPtr m_hookInstance;
+
         /// <summary>
         /// 键盘钩子委托实例
         /// </summary>
@@ -377,17 +379,13 @@ namespace MyHook
         public int InstallMouseHook()
         {
             //IntPtr pInstance = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().ManifestModule);
-            IntPtr pInstance = Win32API.GetModuleHandle("user32"); // after win8
             // 假如没有安装鼠标钩子
-            if (this.m_pMouseHook == IntPtr.Zero)
+            if (m_pMouseHook == IntPtr.Zero)
             {
-                this.m_MouseHookProcedure = new HookProc(this.MouseHookProc);
-                this.m_pMouseHook = Win32API.SetWindowsHookEx(WH_Codes.WH_MOUSE_LL, this.m_MouseHookProcedure, pInstance, 0);
-                if (this.m_pMouseHook == IntPtr.Zero)
+                m_pMouseHook = Win32API.SetWindowsHookEx(WH_Codes.WH_MOUSE_LL, this.m_MouseHookProcedure, m_hookInstance, 0);
+                if (m_pMouseHook == IntPtr.Zero)
                 {
-                    var err = Marshal.GetLastWin32Error();
-                    this.UnInstallMouseHook();
-                    return err;
+                    return Marshal.GetLastWin32Error();
                 }
             }
             return 0;
@@ -400,17 +398,13 @@ namespace MyHook
         public int InstallKeyHook()
         {
             //IntPtr pInstance = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().ManifestModule);
-            IntPtr pInstance = Win32API.GetModuleHandle("user32"); // after win8
             //如果没有安装键盘钩子
-            if (this.m_pKeyboardHook == IntPtr.Zero)
+            if (m_pKeyboardHook == IntPtr.Zero)
             {
-                this.m_KeyboardHookProcedure = new HookProc(this.KeyboardHookProc);
-                this.m_pKeyboardHook = Win32API.SetWindowsHookEx(WH_Codes.WH_KEYBOARD_LL, this.m_KeyboardHookProcedure, pInstance, 0);
-                if (this.m_pKeyboardHook == IntPtr.Zero)
+                m_pKeyboardHook = Win32API.SetWindowsHookEx(WH_Codes.WH_KEYBOARD_LL, this.m_KeyboardHookProcedure, m_hookInstance, 0);
+                if (m_pKeyboardHook == IntPtr.Zero)
                 {
-                    var err = Marshal.GetLastWin32Error();
-                    this.UninstallKeyHook();
-                    return err;
+                    return Marshal.GetLastWin32Error();
                 }
             }
             return 0;
@@ -423,10 +417,10 @@ namespace MyHook
         public bool UnInstallMouseHook()
         {
             bool result = true;
-            if (this.m_pMouseHook != IntPtr.Zero)
+            if (m_pMouseHook != IntPtr.Zero)
             {
                 result = Win32API.UnhookWindowsHookEx(this.m_pMouseHook);
-                this.m_pMouseHook = IntPtr.Zero;
+                m_pMouseHook = IntPtr.Zero;
             }
             return result;
         }
@@ -439,10 +433,10 @@ namespace MyHook
         {
             bool result = true;
 
-            if (this.m_pKeyboardHook != IntPtr.Zero)
+            if (m_pKeyboardHook != IntPtr.Zero)
             {
                 result = Win32API.UnhookWindowsHookEx(this.m_pKeyboardHook);
-                this.m_pKeyboardHook = IntPtr.Zero;
+                m_pKeyboardHook = IntPtr.Zero;
             }
 
             return result;
@@ -455,8 +449,12 @@ namespace MyHook
         /// <summary>
         /// 全局键盘及鼠标钩子，使用时请响应相应的事件
         /// </summary>
-        public MyHooks() {
-            IsStopMouseHook = false;
+        public MyHooks()
+        {
+            //IsStopMouseHook = false;
+            m_MouseHookProcedure = new HookProc(MouseHookProc);
+            m_KeyboardHookProcedure = new HookProc(KeyboardHookProc);
+            m_hookInstance = Win32API.GetModuleHandle("user32"); // after win8
         }
 
         #endregion 构造函数
