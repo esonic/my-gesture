@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("esonic")]
 [assembly: AssemblyProduct("MGesture")]
-[assembly: AssemblyCopyright("esonic ©2008-2013")]
+[assembly: AssemblyCopyright("esonic ©2008-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,6 +30,6 @@ using System.Resources;
 //      内部版本号
 //      修订号
 //
-[assembly: AssemblyVersion("2.1.5.7")]
-[assembly: AssemblyFileVersion("2.1.5.7")]
+[assembly: AssemblyVersion("2.1.6.1")]
+[assembly: AssemblyFileVersion("2.1.6.1")]
 [assembly: NeutralResourcesLanguageAttribute("zh-CN")]
