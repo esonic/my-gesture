@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKRecorder", "MKRecorder\MKRecorder.csproj", "{123971E5-B913-4FB1-AFD2-79554D1197ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHook", "MyHook\MyHook.csproj", "{B39BF649-637D-4AF8-B2AC-318480583CB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{123971E5-B913-4FB1-AFD2-79554D1197ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{123971E5-B913-4FB1-AFD2-79554D1197ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{123971E5-B913-4FB1-AFD2-79554D1197ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{123971E5-B913-4FB1-AFD2-79554D1197ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39BF649-637D-4AF8-B2AC-318480583CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39BF649-637D-4AF8-B2AC-318480583CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39BF649-637D-4AF8-B2AC-318480583CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39BF649-637D-4AF8-B2AC-318480583CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
