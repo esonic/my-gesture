@@ -40,7 +40,7 @@ namespace MGesture
         {
             get 
             {
-                return isDrawLine && System.Environment.OSVersion.Version.Major >= 6 && Win32API.DwmIsCompositionEnabled();
+                return isDrawLine /*&& System.Environment.OSVersion.Version.Major >= 6 && Win32API.DwmIsCompositionEnabled()*/;
             }
             set { isDrawLine = value; }
         }

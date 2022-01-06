@@ -22,8 +22,8 @@ namespace MGesture
         //string lpszOutput, // 无用，可以设定位"NULL"
         //IntPtr lpInitData // 任意打印机数据
         //);
-        [DllImport("dwmapi.dll", PreserveSig = false)]
-        public static extern bool DwmIsCompositionEnabled();
+        //[DllImport("dwmapi.dll", PreserveSig = false)]
+        //public static extern bool DwmIsCompositionEnabled();
 
         [DllImport("user32.dll")]
         public static extern bool SetCursorPos(int X, int Y);
