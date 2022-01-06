@@ -143,7 +143,7 @@ namespace MyHook
         public event MyKeyEventHandler OnKeyDown;
 
         //上一次点击是否发生在任务栏
-        private bool isInTaskbar = false;
+        //private bool isInTaskbar = false;
 
         //上一次鼠标左键抬起的时间
         private DateTime lastLUp = new DateTime();
@@ -241,17 +241,17 @@ namespace MyHook
             //右键事件不被继续传递
             if (button != MouseButtons.None && clickCount != 0)
             {
-                if (button == MouseButtons.Right && clickCount == 1 && !Screen.PrimaryScreen.WorkingArea.Contains(mouseHookStruct.Point.X, mouseHookStruct.Point.Y))
-                {
-                    //要在工作区内，排除任务栏
-                    isInTaskbar = true;
-                    return Win32API.CallNextHookEx(this.m_pMouseHook, nCode, wParam, lParam);
-                }
-                if (button == MouseButtons.Right && clickCount == -1 && isInTaskbar)
-                {
-                    isInTaskbar = false;
-                    return Win32API.CallNextHookEx(this.m_pMouseHook, nCode, wParam, lParam);
-                }
+                //if (button == MouseButtons.Right && clickCount == 1 && !InWorkingArea(mouseHookStruct.Point.X, mouseHookStruct.Point.Y))
+                //{
+                //    //要在工作区内，排除任务栏
+                //    isInTaskbar = true;
+                //    return Win32API.CallNextHookEx(this.m_pMouseHook, nCode, wParam, lParam);
+                //}
+                //if (button == MouseButtons.Right && clickCount == -1 && isInTaskbar)
+                //{
+                //    isInTaskbar = false;
+                //    return Win32API.CallNextHookEx(this.m_pMouseHook, nCode, wParam, lParam);
+                //}
 
                 IntPtr hwnd = Win32API.GetForegroundWindow();
                 //string exefile = "N/A";
@@ -297,6 +297,18 @@ namespace MyHook
             }
             else return Win32API.CallNextHookEx(this.m_pMouseHook, nCode, wParam, lParam);
         }
+
+        //private static bool InWorkingArea(int x, int y)
+        //{
+        //    foreach (var s in Screen.AllScreens)
+        //    {
+        //        if (s.WorkingArea.Contains(x, y))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
 
         /// <summary>
         /// 键盘钩子处理函数
