@@ -230,7 +230,9 @@ namespace MGesture
                 {
                     string[] lines = File.ReadAllLines(ConfigFileName);
                     gestureReco.IsDrawLine = bool.Parse(lines[0]);
-                    gestureReco.Pen = new Pen(Color.FromArgb(Int32.Parse(lines[1])), float.Parse(lines[2]));
+                    var argb = lines[1].Split(',');
+                    gestureReco.Pen = new Pen(Color.FromArgb(
+                        Int32.Parse(argb[0]), Int32.Parse(argb[1]), Int32.Parse(argb[2]), Int32.Parse(argb[3])), float.Parse(lines[2]));
                     gestureReco.LineLength = Int32.Parse(lines[3]);
 
                     keyReco.ModiferKey = (Keys)Enum.Parse(typeof(Keys), lines[4]);

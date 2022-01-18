@@ -158,7 +158,8 @@ namespace MGesture
             //}
             //catch (Exception) { MessageBox.Show(this, "设置网络接口失败", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
 
-            string text = checkBox1.Checked.ToString() + "\r\n" + lblColor.BackColor.ToArgb().ToString() + "\r\n" + numericUpDown1.Value.ToString()
+            var color = lblColor.BackColor.A + "," + lblColor.BackColor.R + "," + lblColor.BackColor.G + "," + lblColor.BackColor.B;
+            string text = checkBox1.Checked.ToString() + "\r\n" + color + "\r\n" + numericUpDown1.Value.ToString()
                 + "\r\n" + gestureReco.LineLength.ToString() + "\r\n" + Enum.GetName(typeof(Keys), keyReco.ModiferKey) + "\r\n" +
                 Program.mainForm.IdealWindowSizeCx.ToString() + "\r\n" + Program.mainForm.IdealWindowSizeCy.ToString() + "\r\n" +
                 /*Program.mainForm.CdVolume*/"F" + "\r\n" + Program.mainForm.HotKey + "\r\n" + Program.mainForm.IsFullScreenStopReco + "\r\n" + Program.mainForm.MouseSpeed1 + "|" + Program.mainForm.MouseSpeed2 +
