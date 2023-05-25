@@ -151,6 +151,7 @@ namespace MGesture
         /// 标记上一个响应了动作的按键
         /// </summary>
         private List<Keys> lastKeys = new List<Keys>();
+        private bool exit = false;
 
         public MainForm()
         {
@@ -269,6 +270,20 @@ namespace MGesture
             else WindowState = FormWindowState.Normal;
 
             Win32API.ShowWindow(Program.mainForm.Handle, 0);
+
+            new System.Threading.Thread(() => {
+                int cnt = Screen.AllScreens.Length;
+                while (!exit)
+                {
+                    System.Threading.Thread.Sleep(5000);
+                    if (cnt != Screen.AllScreens.Length)
+                    {
+                        // screen changed, restart
+                        System.Diagnostics.Process.Start(Application.ExecutablePath);
+                        Application.Exit();
+                    }
+                }
+            }).Start();
         }
 
         /// <summary>
@@ -865,6 +880,7 @@ namespace MGesture
         {
             hook.UnInstallMouseHook();
             WinHotKey.RemoveHotKey(this.Handle, 111);
+            exit = true;
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)

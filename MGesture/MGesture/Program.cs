@@ -21,12 +21,19 @@ namespace MGesture
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                if (RunningInstance() == null)
+                int cnt = 0;
+                while (RunningInstance() != null)
                 {
-                    //没有找到实例，开始运行程序
-                    mainForm = new MainForm();
-                    Application.Run(mainForm);
+                    if (cnt++ > 2)
+                    {
+                        return;
+                    }
+                    System.Threading.Thread.Sleep(500);
                 }
+
+                //没有找到实例，开始运行程序
+                mainForm = new MainForm();
+                Application.Run(mainForm);
             }
             catch (Exception e)
             {
