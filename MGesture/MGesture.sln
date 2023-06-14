@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MGesture", "MGesture\MGesture.csproj", "{68055EA2-DDEF-4598-8E1E-ACDA89438098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MGesture", "MGesture\MGesture.csproj", "{68055EA2-DDEF-4598-8E1E-ACDA89438098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHook", "MyHook\MyHook.csproj", "{B39BF649-637D-4AF8-B2AC-318480583CB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyHook", "MyHook\MyHook.csproj", "{B39BF649-637D-4AF8-B2AC-318480583CB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

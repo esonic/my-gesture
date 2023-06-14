@@ -1,24 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{68055EA2-DDEF-4598-8E1E-ACDA89438098}</ProjectGuid>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MGesture</RootNamespace>
-    <AssemblyName>MGesture</AssemblyName>
     <ApplicationIcon>Flag.ico</ApplicationIcon>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,136 +18,25 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyTitle>MGesture</AssemblyTitle>
+    <Description>鼠标手势及键盘快捷键应用程序
+esonice%40gmail.com</Description>
+    <Company>esonic</Company>
+    <Product>MGesture</Product>
+    <Copyright>esonic ©2008-2023</Copyright>
+    <AssemblyVersion>2.1.8.1</AssemblyVersion>
+    <FileVersion>2.1.8.1</FileVersion>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AboutBox1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutBox1.Designer.cs">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CSAction.cs" />
-    <Compile Include="CSharpInterpreter.cs" />
-    <Compile Include="MKAction.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAddGesture.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAddGesture.Designer.cs">
-      <DependentUpon>FrmAddGesture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGestures.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGestures.Designer.cs">
-      <DependentUpon>FrmGestures.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GestureReco.cs" />
-    <Compile Include="KeyAction.cs" />
-    <Compile Include="KeyControl.cs" />
-    <Compile Include="KeyReco.cs" />
-    <Compile Include="MKRec\MKAction.cs" />
-    <Compile Include="MKRec\MKRecorder.cs" />
-    <Compile Include="MouseControl.cs" />
-    <Compile Include="MyAction.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="ProgramGesture.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutBox1.resx">
-      <DependentUpon>AboutBox1.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddGesture.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmAddGesture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGestures.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmGestures.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting.resx">
-      <DependentUpon>FrmSetting.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="app.config" />
-    <None Include="app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="public_variable.cs" />
-    <Compile Include="StartProAction.cs" />
-    <Compile Include="WIN32API.cs" />
-    <Compile Include="FrmSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSetting.Designer.cs">
-      <DependentUpon>FrmSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinHotKey.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyHook\MyHook.csproj">
-      <Project>{B39BF649-637D-4AF8-B2AC-318480583CB0}</Project>
-      <Name>MyHook</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\MyHook\MyHook.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="35.ico" />
@@ -189,12 +63,8 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Remove="Resources.Designer.cs" />
+    <Compile Remove="Settings.Designer.cs" />
+  </ItemGroup>
 </Project>

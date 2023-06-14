@@ -294,14 +294,14 @@ namespace MGesture
         private void AddtoolStripMenuItem_Click(object sender, EventArgs e)
         {
             //if (frmAdd == null || frmAdd.IsDisposed)
-                frmAdd = new FrmAddGesture(this);
+            frmAdd = new FrmAddGesture(this);
             if (comboBox1.SelectedItem.ToString() == "通用设置")
                 frmAdd.Program = "";
             else frmAdd.Program = comboBox1.SelectedItem.ToString();
 
             if (tabControl2.SelectedTab == mouseActionPage)
             {
-                frmAdd.SetGestrueType(false);  
+                frmAdd.SetGestrueType(false);
             }
             else
             {

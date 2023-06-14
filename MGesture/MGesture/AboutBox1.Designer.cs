@@ -27,118 +27,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel.SuspendLayout();
-            this.SuspendLayout();
+            tableLayoutPanel=new System.Windows.Forms.TableLayoutPanel();
+            labelProductName=new System.Windows.Forms.Label();
+            labelVersion=new System.Windows.Forms.Label();
+            labelCopyright=new System.Windows.Forms.Label();
+            textBoxDescription=new System.Windows.Forms.TextBox();
+            okButton=new System.Windows.Forms.Button();
+            tableLayoutPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.okButton, 1, 4);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(9, 9);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 5;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.47291F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.47291F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.34884F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.44186F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.35296F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(294, 186);
-            this.tableLayoutPanel.TabIndex = 0;
+            tableLayoutPanel.ColumnCount=1;
+            tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+            tableLayoutPanel.Controls.Add(labelProductName, 1, 0);
+            tableLayoutPanel.Controls.Add(labelVersion, 1, 1);
+            tableLayoutPanel.Controls.Add(labelCopyright, 1, 2);
+            tableLayoutPanel.Controls.Add(textBoxDescription, 1, 3);
+            tableLayoutPanel.Controls.Add(okButton, 1, 4);
+            tableLayoutPanel.Dock=System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel.Location=new System.Drawing.Point(10, 10);
+            tableLayoutPanel.Margin=new System.Windows.Forms.Padding(4, 4, 4, 4);
+            tableLayoutPanel.Name="tableLayoutPanel";
+            tableLayoutPanel.RowCount=5;
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.47291F));
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.47291F));
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.34884F));
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.44186F));
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.35296F));
+            tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tableLayoutPanel.Size=new System.Drawing.Size(344, 180);
+            tableLayoutPanel.TabIndex=0;
             // 
             // labelProductName
             // 
-            this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Location = new System.Drawing.Point(6, 0);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(285, 17);
-            this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "产品名称";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelProductName.Dock=System.Windows.Forms.DockStyle.Fill;
+            labelProductName.Location=new System.Drawing.Point(7, 0);
+            labelProductName.Margin=new System.Windows.Forms.Padding(7, 0, 4, 0);
+            labelProductName.MaximumSize=new System.Drawing.Size(0, 20);
+            labelProductName.Name="labelProductName";
+            labelProductName.Size=new System.Drawing.Size(333, 19);
+            labelProductName.TabIndex=19;
+            labelProductName.Text="产品名称";
+            labelProductName.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelVersion
             // 
-            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVersion.Location = new System.Drawing.Point(6, 19);
-            this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(285, 17);
-            this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "版本";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelVersion.Dock=System.Windows.Forms.DockStyle.Fill;
+            labelVersion.Location=new System.Drawing.Point(7, 19);
+            labelVersion.Margin=new System.Windows.Forms.Padding(7, 0, 4, 0);
+            labelVersion.MaximumSize=new System.Drawing.Size(0, 20);
+            labelVersion.Name="labelVersion";
+            labelVersion.Size=new System.Drawing.Size(333, 19);
+            labelVersion.TabIndex=0;
+            labelVersion.Text="版本";
+            labelVersion.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
             // 
-            this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCopyright.Location = new System.Drawing.Point(6, 38);
-            this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(285, 17);
-            this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "版权";
-            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelCopyright.Dock=System.Windows.Forms.DockStyle.Fill;
+            labelCopyright.Location=new System.Drawing.Point(7, 38);
+            labelCopyright.Margin=new System.Windows.Forms.Padding(7, 0, 4, 0);
+            labelCopyright.MaximumSize=new System.Drawing.Size(0, 20);
+            labelCopyright.Name="labelCopyright";
+            labelCopyright.Size=new System.Drawing.Size(333, 20);
+            labelCopyright.TabIndex=21;
+            labelCopyright.Text="版权";
+            labelCopyright.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(6, 79);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(285, 73);
-            this.textBoxDescription.TabIndex = 23;
-            this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "说明";
+            textBoxDescription.Dock=System.Windows.Forms.DockStyle.Fill;
+            textBoxDescription.Location=new System.Drawing.Point(7, 78);
+            textBoxDescription.Margin=new System.Windows.Forms.Padding(7, 4, 4, 4);
+            textBoxDescription.Multiline=true;
+            textBoxDescription.Name="textBoxDescription";
+            textBoxDescription.ReadOnly=true;
+            textBoxDescription.ScrollBars=System.Windows.Forms.ScrollBars.Both;
+            textBoxDescription.Size=new System.Drawing.Size(333, 69);
+            textBoxDescription.TabIndex=23;
+            textBoxDescription.TabStop=false;
+            textBoxDescription.Text="说明";
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(216, 160);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 24;
-            this.okButton.Text = "确定(&O)";
+            okButton.Anchor=System.Windows.Forms.AnchorStyles.Bottom|System.Windows.Forms.AnchorStyles.Right;
+            okButton.DialogResult=System.Windows.Forms.DialogResult.Cancel;
+            okButton.Location=new System.Drawing.Point(252, 155);
+            okButton.Margin=new System.Windows.Forms.Padding(4, 4, 4, 4);
+            okButton.Name="okButton";
+            okButton.Size=new System.Drawing.Size(88, 21);
+            okButton.TabIndex=24;
+            okButton.Text="确定(&O)";
             // 
             // AboutBox1
             // 
-            this.AcceptButton = this.okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 204);
-            this.Controls.Add(this.tableLayoutPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AboutBox1";
-            this.Padding = new System.Windows.Forms.Padding(9);
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AboutBox";
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
-            this.ResumeLayout(false);
-
+            AcceptButton=okButton;
+            AutoScaleDimensions=new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode=System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize=new System.Drawing.Size(364, 200);
+            Controls.Add(tableLayoutPanel);
+            FormBorderStyle=System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin=new System.Windows.Forms.Padding(4, 4, 4, 4);
+            MaximizeBox=false;
+            MinimizeBox=false;
+            Name="AboutBox1";
+            Padding=new System.Windows.Forms.Padding(10, 10, 10, 10);
+            ShowIcon=false;
+            ShowInTaskbar=false;
+            StartPosition=System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text="AboutBox";
+            tableLayoutPanel.ResumeLayout(false);
+            tableLayoutPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

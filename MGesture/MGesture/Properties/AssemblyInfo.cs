@@ -1,17 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Resources;
-
-// 有关程序集的常规信息通过下列属性集
-// 控制。更改这些属性值可修改
-// 与程序集关联的信息。
-[assembly: AssemblyTitle("MGesture")]
-[assembly: AssemblyDescription("鼠标手势及键盘快捷键应用程序\r\nesonice@gmail.com")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("esonic")]
-[assembly: AssemblyProduct("MGesture")]
-[assembly: AssemblyCopyright("esonic ©2008-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,14 +11,3 @@ using System.Resources;
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
 [assembly: Guid("fb402181-edd1-4102-a67f-1bdd2d24416a")]
-
-// 程序集的版本信息由下面四个值组成:
-//
-//      主版本
-//      次版本 
-//      内部版本号
-//      修订号
-//
-[assembly: AssemblyVersion("2.1.7.1")]
-[assembly: AssemblyFileVersion("2.1.7.1")]
-[assembly: NeutralResourcesLanguageAttribute("zh-CN")]
